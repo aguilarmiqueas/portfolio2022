@@ -21,8 +21,11 @@ export default function About() {
           <h2 className="title">Contact</h2>
           <p className="about-contact-links">
             <a href="https://github.com/aguilarmiqueas/">GITHUB </a>/
-            <a href="https://www.linkedin.com/in/miqueas-aguilar/">LINKEDIN</a>/
-            <a href="https://twitter.com/mqemq"> TWITTER</a>
+            <a href="https://www.linkedin.com/in/miqueas-aguilar/">
+              {" "}
+              LINKEDIN{" "}
+            </a>
+            /<a href="https://twitter.com/mqemq"> TWITTER</a>
           </p>
           <p className="about-contact-email">
             <a href="mailto:aguilarmiqueas@gmail.com">

@@ -27,6 +27,14 @@ export default function Post({ name, description, technologies, img = null }) {
               width: 100%;
               background-color: #eeeeee;
             }
+
+            .project-img-wrapper img {
+              object-fit: cover;
+              object-position: top 60%;
+              width: 100%;
+              height: 100%;
+              filter: grayscale(60%);
+            }
             .project-info {
               display: flex;
               width: 100%;

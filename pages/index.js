@@ -8,16 +8,24 @@ export default function Home() {
       name: "CAR GAME",
       description: "FOLLOW THE LINE",
       technologies: "REACT / REACT THREE FIBER",
+      img: "/images/hoc-thumbnail.png",
+      id: 1,
     },
     {
       name: "HOUSE OF CARDS",
       description: "A RADIOHEAD HOMAGE",
       technologies: "VANILLA THREE",
+      img: "/images/hoc-thumbnail.png",
+
+      id: 2,
     },
     {
-      name: "CAR GAME",
-      description: "FOLLOW THE LINE",
-      technologies: "REACT / REACT THREE FIBER",
+      name: "PORTFOLIO",
+      description: "UPDATED 2022",
+      technologies: "REACT / REACT THREE FIBER / GSAP",
+      img: "/images/hoc-thumbnail.png",
+
+      id: 3,
     },
   ];
   return (
@@ -51,39 +59,10 @@ export default function Home() {
                 name={props.name}
                 description={props.description}
                 technologies={props.technologies}
-                img={null}
+                img={props.img}
+                key={props.id}
               />
             ))}
-            <div className="project-wrapper">
-              <div className="project-img-wrapper">
-                <img src="" alt="" />
-              </div>
-              <div className="project-info">
-                <div className="project-info-left">
-                  <p className="project-description">FOLLOW THE LINE</p>
-
-                  <h2 className="project-title">CAR GAME</h2>
-                </div>
-                <div className="project-info-right">
-                  <p>REACT / REACT THREE FIBER</p>
-                </div>
-              </div>
-            </div>
-            <div className="project-wrapper">
-              <div className="project-img-wrapper">
-                <img src="" alt="" />
-              </div>
-              <div className="project-info">
-                <div className="project-info-left">
-                  <p className="project-description">UPDATED 2022 PORTFOLIO</p>
-
-                  <h2 className="project-title">PORTFOLIO</h2>
-                </div>
-                <div className="project-info-right">
-                  <p>REACT / REACT THREE FIBER / GSAP</p>
-                </div>
-              </div>
-            </div>
           </div>
         </section>
         <footer>
