@@ -30,6 +30,18 @@ a {
   text-decoration: none;
 }
 
+p,
+h1,
+h2,
+h3 {
+  cursor: default;
+}
+
+::selection {
+  color: var(--background-color);
+  background-color: var(--background-color);
+}
+
 .title {
   font-weight: normal;
 

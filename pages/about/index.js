@@ -8,21 +8,27 @@ export default function About() {
         <div className="about-main">
           <h1 className="title"> ABOUT ME</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. A id,
-            incidunt omnis doloremque aperiam impedit labore eaque dolores
-            voluptas dicta. Lorem ipsum dolor, sit amet consectetur adipisicing
-            elit. Eos nulla excepturi vel, nobis explicabo dolore hic
-            exercitationem doloremque voluptates inventore?
+            Hi! I'm a creative / front end developer based in Argentina. Looking
+            to build fun stuff and learn new things. Currently available for
+            work.
           </p>
         </div>
         <div className="about-subwrapper about-tech">
           <h2 className="title">Technologies</h2>
-          <p>JAVASCRIPT / REACT / NEXT / THREE / GSAP</p>
+          <p>Javascript / React / Next / Three / GSAP</p>
         </div>
         <div className="about-subwrapper about-contact">
           <h2 className="title">Contact</h2>
-          <p className="about-contact-links">GITHUB / LINKEDIN / TWITTER</p>
-          <p className="about-contact-email">aguilarmiqueas@gmail.com</p>
+          <p className="about-contact-links">
+            <a href="https://github.com/aguilarmiqueas/">GITHUB </a>/
+            <a href="https://www.linkedin.com/in/miqueas-aguilar/">LINKEDIN</a>/
+            <a href="https://twitter.com/mqemq"> TWITTER</a>
+          </p>
+          <p className="about-contact-email">
+            <a href="mailto:aguilarmiqueas@gmail.com">
+              aguilarmiqueas@gmail.com
+            </a>
+          </p>
         </div>
       </div>
 
@@ -92,15 +98,18 @@ export default function About() {
           .About {
             margin-top: 25vh;
           }
+          .about-wrapper {
+            padding-left: 14vw;
+          }
           .about-main .title {
-            font-size: 4vw;
+            font-size: clamp(1em, 4vw, 60px);
           }
           .about-subwrapper .title {
-            font-size: 4vw;
+            font-size: clamp(1em, 4vw, 50px);
           }
           .about-wrapper p,
           .about-subwrapper p {
-            font-size: 2vw;
+            font-size: clamp(1em, 2vw, 30px);
             max-width: 66%;
           }
         }

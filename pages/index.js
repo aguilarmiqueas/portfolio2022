@@ -7,6 +7,7 @@ export default function Home() {
       <Head>
         <title>MIQUEAS AGUILAR</title>
         <link rel="icon" hr ef="/favicon.ico" />
+        <meta name="description" content="2022 Web Portfolio" />
       </Head>
 
       <main>
@@ -22,9 +23,8 @@ export default function Home() {
           <div className="projects-intro">
             <h1>WORK</h1>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Reiciendis eligendi consectetur cumque, sint praesentium quos a
-              unde earum maxime pariatur.
+              A selection of my most recent projects
+              <br />
             </p>
           </div>
           <div className="projects-main">
@@ -78,8 +78,19 @@ export default function Home() {
         <footer>
           <h1>CONTACT</h1>
           <div className="contact-wrapper">
-            <div className="contact-links">GITHUB / LINKEDIN / TWITTER</div>
-            <a className="contact-email">aguilarmiqueas@gmail.com</a>
+            <div className="contact-links">
+              <a href="https://github.com/aguilarmiqueas/">GITHUB </a>/
+              <a href="https://www.linkedin.com/in/miqueas-aguilar/">
+                {" "}
+                LINKEDIN{" "}
+              </a>
+              /<a href="https://twitter.com/mqemq"> TWITTER</a>
+            </div>
+            <div className="contact-email">
+              <a href="mailto:aguilarmiqueas@gmail.com">
+                aguilarmiqueas@gmail.com
+              </a>
+            </div>
           </div>
         </footer>
       </main>
@@ -145,7 +156,7 @@ export default function Home() {
       <style jsx>
         {`
           .Projects {
-            margin: 8vh 0;
+            margin: 15vh 0;
             display: flex;
             flex-direction: column;
             padding: 4vw;
@@ -208,10 +219,10 @@ export default function Home() {
 
           @media (min-width: 600px) {
             .projects-intro h1 {
-              font-size: 6vw;
+              font-size: clamp(1em, 6vw, 60px);
             }
             .projects-intro p {
-              font-size: 3vw;
+              font-size: clamp(1em, 3vw, 30px);
             }
 
             .project-wrapper {
@@ -234,29 +245,32 @@ export default function Home() {
           }
 
           @media (min-width: 960px) {
+            .projects-intro {
+              padding-left: 10vw;
+            }
             .project-wrapper {
               margin-bottom: 8vw;
             }
             .projects-intro h1 {
-              font-size: 4vw;
+              font-size: clamp(1em, 4vw, 60px);
             }
             .projects-intro p {
-              font-size: 2vw;
+              font-size: clamp(1em, 2vw, 30px);
             }
             .project-img-wrapper {
               height: 75vh;
             }
             .project-info {
-              margin-top: 1vw;
+              margin-top: 0vw;
             }
             .project-title {
-              font-size: 2.5vw;
+              font-size: clamp(0.1em, 2.5vw, 36px);
             }
             .project-description {
-              font-size: 1.5vw;
+              font-size: clamp(0.1em, 1.5vw, 22px);
             }
             .project-info-right p {
-              font-size: 1.5vw;
+              font-size: clamp(0.1em, 1.5vw, 22px);
             }
           }
         `}
@@ -287,11 +301,14 @@ export default function Home() {
           }
 
           @media (min-width: 960px) {
+            footer {
+              padding-left: 10vw;
+            }
             footer h1 {
-              font-size: 4vw;
+              font-size: clamp(1em, 4vw, 60px);
             }
             .contact-wrapper {
-              font-size: 2vw;
+              font-size: clamp(1em, 2vw, 30px);
             }
           }
         `}
