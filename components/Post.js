@@ -1,7 +1,13 @@
 import Link from "next/link";
-export default function Post({ name, description, technologies, img = null }) {
+export default function Post({
+  name,
+  description,
+  technologies,
+  img = null,
+  id,
+}) {
   return (
-    <Link href="/">
+    <Link href={`/project/${id}`}>
       <div className="project-wrapper">
         <div className="project-img-wrapper">
           <img src={img} alt="" />
@@ -21,6 +27,14 @@ export default function Post({ name, description, technologies, img = null }) {
               display: flex;
               flex-direction: column;
               margin-top: 4vh;
+              cursor: pointer;
+            }
+            .project-wrapper * {
+              cursor: pointer;
+            }
+            .project-wrapper:hover .project-img-wrapper img {
+              // filter: grayscale(100%);
+              background-color: green;
             }
             .project-img-wrapper {
               height: 30vh;
@@ -30,11 +44,12 @@ export default function Post({ name, description, technologies, img = null }) {
 
             .project-img-wrapper img {
               object-fit: cover;
-              object-position: top 60%;
               width: 100%;
               height: 100%;
               filter: grayscale(60%);
+              transition: filter 150ms;
             }
+
             .project-info {
               display: flex;
               width: 100%;

@@ -2,12 +2,12 @@ import Head from "next/head";
 import Navigation from "../components/Navigation";
 import Post from "../components/Post";
 
-export default function Home() {
+export default function Home({ posts }) {
   const data = [
     {
       name: "CAR GAME",
       description: "FOLLOW THE LINE",
-      technologies: "REACT / REACT THREE FIBER",
+      technologies: "REACT THREE FIBER / ZUSTAND",
       img: "/images/hoc-thumbnail.png",
       id: 1,
     },
@@ -22,7 +22,7 @@ export default function Home() {
     {
       name: "PORTFOLIO",
       description: "UPDATED 2022",
-      technologies: "REACT / REACT THREE FIBER / GSAP",
+      technologies: "NEXT / REACT THREE FIBER / GSAP",
       img: "/images/hoc-thumbnail.png",
 
       id: 3,
@@ -48,10 +48,7 @@ export default function Home() {
         <section className="Projects">
           <div className="projects-intro">
             <h1>WORK</h1>
-            <p>
-              A selection of my most recent projects
-              <br />
-            </p>
+            <p>A selection of some of my most recent projects</p>
           </div>
           <div className="projects-main">
             {data.map((props) => (
@@ -60,6 +57,7 @@ export default function Home() {
                 description={props.description}
                 technologies={props.technologies}
                 img={props.img}
+                id={props.id}
                 key={props.id}
               />
             ))}

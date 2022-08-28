@@ -1,0 +1,26 @@
+[
+  {
+    "name": "CAR GAME",
+    "description": "FOLLOW THE LINE",
+    "technologies": "REACT THREE FIBER / ZUSTAND",
+    "img": "/images/hoc-thumbnail.png",
+    "id": 1,
+    "content": ""
+  },
+  {
+    "name": "HOUSE OF CARDS",
+    "description": "A RADIOHEAD HOMAGE",
+    "technologies": "VANILLA THREE",
+    "img": "/images/hoc-thumbnail.png",
+
+    "id": 2
+  },
+  {
+    "name": "PORTFOLIO",
+    "description": "UPDATED 2022",
+    "technologies": "NEXT / REACT THREE FIBER / GSAP",
+    "img": "/images/hoc-thumbnail.png",
+
+    "id": 3
+  }
+]
