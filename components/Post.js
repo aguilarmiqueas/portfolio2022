@@ -37,7 +37,7 @@ export default function Post({
               background-color: green;
             }
             .project-img-wrapper {
-              height: 30vh;
+              height: 50vh;
               width: 100%;
               background-color: #eeeeee;
             }
@@ -101,7 +101,7 @@ export default function Post({
                 margin-bottom: 8vw;
               }
               .project-img-wrapper {
-                height: 75vh;
+                height: 85vh;
               }
               .project-info {
                 margin-top: 0vw;

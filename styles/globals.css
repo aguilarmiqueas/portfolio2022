@@ -13,6 +13,7 @@ body {
   margin: 0;
   font-size: 10px;
   font-family: "Neue Montreal Book";
+  font-weight: normal;
   color: var(--main-color);
   background-color: var(--background-color);
 }
@@ -35,6 +36,7 @@ h1,
 h2,
 h3 {
   cursor: default;
+  font-weight: normal;
 }
 
 ::selection {

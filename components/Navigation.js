@@ -6,7 +6,7 @@ export default function Navigation() {
       <Link href="/about">
         <a className="navigation-link navigation-about">ABOUT</a>
       </Link>
-      <Link href="/">
+      <Link href="/" scroll={false}>
         <a className="navigation-link navigation-work">WORK</a>
       </Link>
 
@@ -25,6 +25,7 @@ export default function Navigation() {
             top: 3.2vh;
             font-size: 5vw;
           }
+
           .navigation-about {
             left: 6vw;
           }

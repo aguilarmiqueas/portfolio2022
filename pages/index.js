@@ -196,6 +196,7 @@ export default function Home({ posts }) {
           footer {
             padding: 4vw;
             padding-bottom: 6vw;
+            margin: 8vh 0 4vh;
           }
           footer h1 {
             font-family: "Neue Montreal Bold", sans-serif;
@@ -217,6 +218,7 @@ export default function Home({ posts }) {
           @media (min-width: 960px) {
             footer {
               padding-left: 10vw;
+              margin: 0;
             }
             footer h1 {
               font-size: clamp(1em, 4vw, 60px);

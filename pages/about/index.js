@@ -53,7 +53,7 @@ export default function About() {
         .title {
           text-align: left;
           text-transform: uppercase;
-          margin-bottom: 4vw;
+          margin-bottom: 1vw;
         }
         .about-main .title {
           font-size: 11vw;
