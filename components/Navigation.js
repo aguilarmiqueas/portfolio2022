@@ -1,13 +1,28 @@
 import Link from "next/link";
-
+import gsap from "gsap";
+import { useEffect, useRef } from "react";
 export default function Navigation() {
+  const about = useRef();
+  const work = useRef();
+  useEffect(() => {
+    gsap.from([about.current, work.current], {
+      duration: 2,
+      ease: "power3.inOut",
+      opacity: 0,
+      y: 50,
+    });
+  }, []);
   return (
     <nav>
-      <Link href="/about">
-        <a className="navigation-link navigation-about">ABOUT</a>
+      <Link className="linkWrap" href="/about">
+        <a className="navigation-link navigation-about">
+          <div ref={about}>ABOUT</div>
+        </a>
       </Link>
-      <Link href="/" scroll={false}>
-        <a className="navigation-link navigation-work">WORK</a>
+      <Link className="linkWrap" href="/" scroll={false}>
+        <a className="navigation-link navigation-work">
+          <div ref={work}>WORK</div>
+        </a>
       </Link>
 
       <style jsx>
@@ -19,11 +34,13 @@ export default function Navigation() {
             background-color: var(--background-color);
             height: 10vh;
             z-index: 1;
+            display: flex;
+            align-items: center;
           }
           .navigation-link {
             position: absolute;
-            top: 3.2vh;
             font-size: 5vw;
+            overflow: hidden;
           }
 
           .navigation-about {
@@ -31,6 +48,9 @@ export default function Navigation() {
           }
           .navigation-work {
             right: 6vw;
+          }
+          .linkWrap {
+            overflow: hidden;
           }
 
           @media (min-width: 600px) {
@@ -50,7 +70,6 @@ export default function Navigation() {
               right: 2vw;
             }
             .navigation-link {
-              top: 2vh;
               font-size: 1.4vw;
             }
           }

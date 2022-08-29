@@ -33,21 +33,21 @@ export default function Post({
               cursor: pointer;
             }
             .project-wrapper:hover .project-img-wrapper img {
-              // filter: grayscale(100%);
-              background-color: green;
+              filter: grayscale(0%);
             }
             .project-img-wrapper {
               height: 50vh;
               width: 100%;
               background-color: #eeeeee;
+              overflow: hidden;
             }
 
             .project-img-wrapper img {
               object-fit: cover;
               width: 100%;
               height: 100%;
-              filter: grayscale(60%);
-              transition: filter 150ms;
+              transform: scale(1.01);
+              transition: filter 300ms;
             }
 
             .project-info {
@@ -102,6 +102,9 @@ export default function Post({
               }
               .project-img-wrapper {
                 height: 85vh;
+              }
+              .project-img-wrapper img {
+                filter: grayscale(40%);
               }
               .project-info {
                 margin-top: 0vw;

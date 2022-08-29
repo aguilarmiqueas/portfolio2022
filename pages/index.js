@@ -1,8 +1,19 @@
 import Head from "next/head";
 import Navigation from "../components/Navigation";
 import Post from "../components/Post";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import { useEffect, useRef, createRef } from "react";
 
-export default function Home({ posts }) {
+export default function Home() {
+  const mainTitle = useRef();
+  const mainSubtitle = useRef();
+  const workTitle = useRef();
+  const workDescription = useRef();
+  const projects = useRef();
+  const contactTitle = useRef();
+  const contactLinks = useRef();
+  const contactEmail = useRef();
   const data = [
     {
       name: "CAR GAME",
@@ -28,6 +39,59 @@ export default function Home({ posts }) {
       id: 3,
     },
   ];
+  const posts = useRef(data.map(createRef));
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    const tl = new gsap.timeline();
+    tl.from(mainTitle.current, {
+      opacity: 0,
+      y: 75,
+      ease: "power4.inOut",
+      duration: 2.4,
+    });
+    tl.from(
+      mainSubtitle.current,
+      {
+        opacity: 0,
+        y: 75,
+        ease: "power4.inOut",
+        duration: 2.4,
+      },
+      ">-2.2925"
+    );
+    gsap.from([workTitle.current, workDescription.current, projects.current], {
+      scrollTrigger: {
+        trigger: mainTitle.current,
+        start: "top center",
+        markers: true,
+      },
+      duration: 0.5,
+      opacity: 0,
+      y: 50,
+      ease: "pow2.easeIn",
+      stagger: {
+        each: 0.075,
+      },
+    });
+    gsap.from(
+      [contactTitle.current, contactLinks.current, contactEmail.current],
+      {
+        scrollTrigger: {
+          trigger: projects.current,
+          start: "bottom bottom",
+          markers: true,
+        },
+        duration: 0.5,
+        opacity: 0,
+        y: 50,
+        ease: "power2.out",
+        stagger: {
+          each: 0.075,
+        },
+      }
+    );
+  }, []);
   return (
     <div className="container">
       <Head>
@@ -41,17 +105,27 @@ export default function Home({ posts }) {
           <Navigation />
 
           <div className="title-wrap">
-            <h1 className="main-title title">MIQUEAS AGUILAR</h1>
-            <h2 className="main-subtitle title">FRONT END DEVELOPER</h2>
+            <div className="mainTitleWrap">
+              <h1 ref={mainTitle} className="main-title title">
+                MIQUEAS AGUILAR
+              </h1>
+            </div>
+            <div className="mainTitleWrap">
+              <h2 ref={mainSubtitle} className="main-subtitle title">
+                FRONT END DEVELOPER
+              </h2>
+            </div>
           </div>
         </header>
-        <section className="Projects">
+        <section className="Projects" ref={projects}>
           <div className="projects-intro">
-            <h1>WORK</h1>
-            <p>A selection of some of my most recent projects</p>
+            <h1 ref={workTitle}>WORK</h1>
+            <p ref={workDescription}>
+              A selection of some of my most recent projects
+            </p>
           </div>
           <div className="projects-main">
-            {data.map((props) => (
+            {data.map((props, i) => (
               <Post
                 name={props.name}
                 description={props.description}
@@ -59,14 +133,15 @@ export default function Home({ posts }) {
                 img={props.img}
                 id={props.id}
                 key={props.id}
+                ref={posts.current[i]}
               />
             ))}
           </div>
         </section>
         <footer>
-          <h1>CONTACT</h1>
+          <h1 ref={contactTitle}>CONTACT</h1>
           <div className="contact-wrapper">
-            <div className="contact-links">
+            <div className="contact-links" ref={contactLinks}>
               <a href="https://github.com/aguilarmiqueas/">GITHUB </a>/
               <a href="https://www.linkedin.com/in/miqueas-aguilar/">
                 {" "}
@@ -74,7 +149,7 @@ export default function Home({ posts }) {
               </a>
               /<a href="https://twitter.com/mqemq"> TWITTER</a>
             </div>
-            <div className="contact-email">
+            <div className="contact-email" ref={contactEmail}>
               <a href="mailto:aguilarmiqueas@gmail.com">
                 aguilarmiqueas@gmail.com
               </a>
@@ -95,7 +170,10 @@ export default function Home({ posts }) {
           height: 100vh;
           position: relative;
         }
-
+        .mainTitleWrap {
+          overflow: hidden;
+          height: 150%;
+        }
         .title-wrap {
           position: absolute;
           top: 75%;
@@ -115,7 +193,8 @@ export default function Home({ posts }) {
             font-size: 6vw;
           }
           .title {
-            line-height: 0.6;
+            // line-height: 0.6;
+            margin: 0;
           }
         }
 
