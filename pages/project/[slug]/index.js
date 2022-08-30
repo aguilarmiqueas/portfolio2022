@@ -20,7 +20,6 @@ export default function Post() {
   if (!data) return <div>Something went wrong.</div>;
   return (
     <article className="Project">
-      <Navigation />
       <header></header>
       <div className="description">
         <h1>{data.name}</h1>
@@ -45,7 +44,7 @@ export default function Post() {
 
           header {
             height: 98vh;
-            width: 100vw;
+            width: 100%;
             background-image: url(${data.img});
             background-position: center;
             background-size: cover;

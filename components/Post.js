@@ -40,14 +40,41 @@ export default function Post({
               width: 100%;
               background-color: #eeeeee;
               overflow: hidden;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              position: relative;
+            }
+
+            .project-img-wrapper:after {
+              position: absolute;
+              bottom: 0;
+              content: "";
+              height: 2px;
+              width: 100%;
+              background: rgb(90, 90, 255);
+              background: linear-gradient(
+                90deg,
+                rgba(90, 90, 255, 1) 0%,
+                rgba(63, 253, 255, 1) 33%,
+                rgba(154, 113, 230, 1) 66%,
+                rgba(249, 115, 249, 1) 100%
+              );
+              z-index: 4;
+              transition: all 150ms ease;
+            }
+
+            .project-wrapper:hover .project-img-wrapper:after {
+              height: 8px;
             }
 
             .project-img-wrapper img {
               object-fit: cover;
               width: 100%;
-              height: 100%;
-              transform: scale(1.01);
+              height: 110%;
+              transform: scale(1.05);
               transition: filter 300ms;
+              position: relative;
             }
 
             .project-info {
@@ -104,7 +131,7 @@ export default function Post({
                 height: 85vh;
               }
               .project-img-wrapper img {
-                filter: grayscale(40%);
+                filter: grayscale(70%);
               }
               .project-info {
                 margin-top: 0vw;

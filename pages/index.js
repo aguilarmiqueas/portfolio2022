@@ -46,30 +46,29 @@ export default function Home() {
     const tl = new gsap.timeline();
     tl.from(mainTitle.current, {
       opacity: 0,
-      y: 75,
-      ease: "power4.inOut",
-      duration: 2.4,
+      y: 85,
+      ease: "power3.inOut",
+      duration: 1.4,
     });
     tl.from(
       mainSubtitle.current,
       {
         opacity: 0,
-        y: 75,
-        ease: "power4.inOut",
-        duration: 2.4,
+        y: 85,
+        ease: "power3.inOut",
+        duration: 1.4,
       },
-      ">-2.2925"
+      ">-1.3"
     );
     gsap.from([workTitle.current, workDescription.current, projects.current], {
       scrollTrigger: {
         trigger: mainTitle.current,
         start: "top center",
-        markers: true,
       },
       duration: 0.5,
       opacity: 0,
       y: 50,
-      ease: "pow2.easeIn",
+      ease: "power2.out",
       stagger: {
         each: 0.075,
       },
@@ -80,11 +79,10 @@ export default function Home() {
         scrollTrigger: {
           trigger: projects.current,
           start: "bottom bottom",
-          markers: true,
         },
         duration: 0.5,
         opacity: 0,
-        y: 50,
+        y: 40,
         ease: "power2.out",
         stagger: {
           each: 0.075,
@@ -102,8 +100,6 @@ export default function Home() {
 
       <main>
         <header>
-          <Navigation />
-
           <div className="title-wrap">
             <div className="mainTitleWrap">
               <h1 ref={mainTitle} className="main-title title">
@@ -284,7 +280,63 @@ export default function Home() {
           .contact-wrapper {
             font-size: 5.5vw;
           }
+          .contact-wrapper a {
+            background: rgb(255, 255, 255);
+            background: linear-gradient(90deg, #ffffff, #ffffff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: background 150ms ease;
+          }
 
+          .contact-wrapper a:hover {
+            background: linear-gradient(
+              117deg,
+              #00fdff,
+              #0049ff,
+              #a9c1fd,
+              #e022ff
+            );
+            background-size: 800% 800%;
+            -webkit-background-clip: text;
+
+            -webkit-animation: AnimationName 20s ease infinite;
+            -moz-animation: AnimationName 20s ease infinite;
+            animation: AnimationName 20s ease infinite;
+          }
+
+          @-webkit-keyframes AnimationName {
+            0% {
+              background-position: 0% 5%;
+            }
+            50% {
+              background-position: 100% 96%;
+            }
+            100% {
+              background-position: 0% 5%;
+            }
+          }
+          @-moz-keyframes AnimationName {
+            0% {
+              background-position: 0% 5%;
+            }
+            50% {
+              background-position: 100% 96%;
+            }
+            100% {
+              background-position: 0% 5%;
+            }
+          }
+          @keyframes AnimationName {
+            0% {
+              background-position: 0% 5%;
+            }
+            50% {
+              background-position: 100% 96%;
+            }
+            100% {
+              background-position: 0% 5%;
+            }
+          }
           @media (min-width: 600px) {
             footer h1 {
               font-size: 6vw;

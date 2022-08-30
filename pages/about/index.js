@@ -25,9 +25,9 @@ export default function About() {
       ],
       {
         opacity: 0,
-        y: 40,
-        duration: 1,
-        ease: "asd",
+        y: 50,
+        duration: 0.5,
+        ease: "power2.out",
         stagger: {
           each: 0.075,
         },
@@ -36,7 +36,6 @@ export default function About() {
   }, []);
   return (
     <div className="About">
-      <Navigation />
       <div className="about-wrapper">
         <div className="about-main">
           <h1 ref={aboutMeTitle} className="title">
@@ -114,6 +113,64 @@ export default function About() {
 
         .about-subwrapper p {
           font-size: 5.5vw;
+        }
+
+        .about-contact a {
+          background: rgb(255, 255, 255);
+          background: linear-gradient(90deg, #ffffff, #ffffff);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          transition: background 150ms ease;
+        }
+
+        .about-contact a:hover {
+          background: linear-gradient(
+            117deg,
+            #00fdff,
+            #0049ff,
+            #a9c1fd,
+            #e022ff
+          );
+          background-size: 800% 800%;
+          -webkit-background-clip: text;
+
+          -webkit-animation: AnimationName 20s ease infinite;
+          -moz-animation: AnimationName 20s ease infinite;
+          animation: AnimationName 20s ease infinite;
+        }
+
+        @-webkit-keyframes AnimationName {
+          0% {
+            background-position: 0% 5%;
+          }
+          50% {
+            background-position: 100% 96%;
+          }
+          100% {
+            background-position: 0% 5%;
+          }
+        }
+        @-moz-keyframes AnimationName {
+          0% {
+            background-position: 0% 5%;
+          }
+          50% {
+            background-position: 100% 96%;
+          }
+          100% {
+            background-position: 0% 5%;
+          }
+        }
+        @keyframes AnimationName {
+          0% {
+            background-position: 0% 5%;
+          }
+          50% {
+            background-position: 100% 96%;
+          }
+          100% {
+            background-position: 0% 5%;
+          }
         }
 
         @media (min-width: 600px) {
