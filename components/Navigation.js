@@ -7,9 +7,10 @@ export default function Navigation() {
   useEffect(() => {
     gsap.from([about.current, work.current], {
       duration: 1,
-      ease: "power3.out",
-      opacity: 0.1,
+      ease: "power3.inOut",
+      opacity: 0,
       y: 20,
+      delay: 0.66,
       stagger: {
         each: 0.1,
       },
@@ -17,17 +18,16 @@ export default function Navigation() {
   }, []);
   return (
     <nav>
+      <Link className="linkWrap" href="/">
+        <a className="navigation-link navigation-work">
+          <div ref={work}>WORK</div>
+        </a>
+      </Link>
       <Link className="linkWrap" href="/about">
         <a className="navigation-link navigation-about">
           <div ref={about}>ABOUT</div>
         </a>
       </Link>
-      <Link className="linkWrap" href="/" scroll={false}>
-        <a className="navigation-link navigation-work">
-          <div ref={work}>WORK</div>
-        </a>
-      </Link>
-
       <style jsx>
         {`
           nav {
@@ -104,10 +104,10 @@ export default function Navigation() {
           }
 
           .navigation-about {
-            left: 6vw;
+            right: 6vw;
           }
           .navigation-work {
-            right: 6vw;
+            left: 6vw;
           }
           .linkWrap {
             overflow: hidden;
@@ -124,10 +124,10 @@ export default function Navigation() {
               height: 6vh;
             }
             .navigation-about {
-              left: 2vw;
+              right: 2vw;
             }
             .navigation-work {
-              right: 2vw;
+              left: 2vw;
             }
             .navigation-link {
               font-size: 1.4vw;

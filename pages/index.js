@@ -113,7 +113,7 @@ export default function Home() {
             </div>
           </div>
         </header>
-        <section className="Projects" ref={projects}>
+        <section id="Projects" className="Projects" ref={projects}>
           <div className="projects-intro">
             <h1 ref={workTitle}>WORK</h1>
             <p ref={workDescription}>
@@ -219,10 +219,11 @@ export default function Home() {
       <style jsx>
         {`
           .Projects {
-            margin: 15vh 0;
+            margin: 5vh 0;
             display: flex;
             flex-direction: column;
             padding: 4vw;
+            padding-top: 8vw;
             margin-bottom: 0;
           }
           .projects-intro h1 {
