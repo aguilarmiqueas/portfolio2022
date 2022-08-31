@@ -82,6 +82,7 @@ export default function About() {
           font-weight: normal;
           margin-top: 15vh;
           padding-bottom: 15vh;
+          min-height: calc(75vh - 12px);
         }
         .about-wrapper {
           padding: 4vw;

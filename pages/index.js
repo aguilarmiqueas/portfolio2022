@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { useRouter } from "next/router";
 import Navigation from "../components/Navigation";
 import Post from "../components/Post";
 import gsap from "gsap";
@@ -6,6 +7,8 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useEffect, useRef, createRef } from "react";
 
 export default function Home() {
+  const router = useRouter();
+
   const mainTitle = useRef();
   const mainSubtitle = useRef();
   const workTitle = useRef();
@@ -60,7 +63,28 @@ export default function Home() {
       },
       ">-1.3"
     );
-    gsap.from([workTitle.current, workDescription.current, projects.current], {
+    const projectSelector = gsap.utils.selector(projects.current);
+    const projectArray = projectSelector(".project-wrapper");
+    projectArray.forEach((e, i) => {
+      const trigger = i === 0 ? workTitle.current : projectArray[i - 1];
+
+      console.log(i, trigger);
+
+      gsap.from(e, {
+        scrollTrigger: {
+          trigger: trigger,
+          start: "bottom bottom",
+        },
+        duration: 0.5,
+        opacity: 0,
+        y: 50,
+        ease: "power2.out",
+        stagger: {
+          each: 0.075,
+        },
+      });
+    });
+    gsap.from([workTitle.current, workDescription.current], {
       scrollTrigger: {
         trigger: mainTitle.current,
         start: "top center",
@@ -77,8 +101,8 @@ export default function Home() {
       [contactTitle.current, contactLinks.current, contactEmail.current],
       {
         scrollTrigger: {
-          trigger: projects.current,
-          start: "bottom bottom",
+          trigger: contactTitle.current,
+          start: "center bottom",
         },
         duration: 0.5,
         opacity: 0,
@@ -222,6 +246,7 @@ export default function Home() {
             margin: 5vh 0;
             display: flex;
             flex-direction: column;
+            align-items: center;
             padding: 4vw;
             padding-top: 8vw;
             margin-bottom: 0;
@@ -238,6 +263,7 @@ export default function Home() {
 
           .projects-intro {
             margin-bottom: 4vw;
+            width: 100%;
           }
           .projects-main {
             margin-top: 6vh;

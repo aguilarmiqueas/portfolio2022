@@ -1,9 +1,40 @@
 import Link from "next/link";
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
-export default function Navigation() {
+import { useRouter } from "next/router";
+
+export default function Navigation({ parentRef, cursorRef }) {
   const about = useRef();
   const work = useRef();
+  const router = useRouter();
+  const app = gsap.utils.selector(parentRef);
+  gsap.defaults({
+    ease: "power3.inOut",
+  });
+  const handleComplete = () => {
+    gsap.to(app(".transition-box-off"), {
+      top: "-100vh",
+      duration: 0.25,
+    });
+    gsap.from([about.current, work.current], {
+      duration: 1,
+      ease: "power3.inOut",
+      opacity: 0,
+      y: 20,
+      delay: 0.66,
+      stagger: {
+        each: 0.1,
+      },
+    });
+    console.log(cursorRef);
+    gsap.to(cursorRef.current, {
+      width: 25,
+      height: 25,
+      opacity: 1,
+      duration: 0.2,
+      delay: 1,
+    });
+  };
   useEffect(() => {
     gsap.from([about.current, work.current], {
       duration: 1,
@@ -15,16 +46,52 @@ export default function Navigation() {
         each: 0.1,
       },
     });
+    router.events.on("routeChangeComplete", handleComplete);
+    return () => {
+      router.events.off("routeChangeComplete", handleComplete);
+    };
   }, []);
+
+  const handleClick = (e, href) => {
+    e.preventDefault();
+    gsap.to(cursorRef.current, {
+      width: 0,
+      height: 0,
+      opacity: 0,
+      duration: 0.2,
+    });
+    gsap.to(app(".transition-box-main"), {
+      left: 0,
+      duration: 0.5,
+    });
+    gsap.to(app(".transition-box-off"), {
+      top: 0,
+      duration: 0.25,
+      delay: 0.4,
+      onComplete: () => {
+        gsap.set(app(".transition-box-main"), {
+          left: "-100vw",
+        });
+        router.push(href);
+      },
+    });
+  };
+
+  const handleWork = (e) => {
+    handleClick(e, "/");
+  };
+  const handleAbout = (e) => {
+    handleClick(e, "/about");
+  };
   return (
     <nav>
       <Link className="linkWrap" href="/">
-        <a className="navigation-link navigation-work">
+        <a className="navigation-link navigation-work" onClick={handleWork}>
           <div ref={work}>WORK</div>
         </a>
       </Link>
       <Link className="linkWrap" href="/about">
-        <a className="navigation-link navigation-about">
+        <a className="navigation-link navigation-about" onClick={handleAbout}>
           <div ref={about}>ABOUT</div>
         </a>
       </Link>
@@ -121,13 +188,13 @@ export default function Navigation() {
 
           @media (min-width: 960px) {
             nav {
-              height: 6vh;
+              height: 8vh;
             }
             .navigation-about {
-              right: 2vw;
+              right: 2.25vw;
             }
             .navigation-work {
-              left: 2vw;
+              left: 2.25vw;
             }
             .navigation-link {
               font-size: 1.4vw;

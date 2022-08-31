@@ -16,6 +16,7 @@ body {
   font-weight: normal;
   color: var(--main-color);
   background-color: var(--background-color);
+  overscroll-behavior-y: none;
 }
 
 *,

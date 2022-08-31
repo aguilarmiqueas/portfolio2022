@@ -28,6 +28,9 @@ export default function Post({
               flex-direction: column;
               margin-top: 4vh;
               cursor: pointer;
+              // width: min(72vw, 1400px);
+
+              max-width: 1400px;
             }
             .project-wrapper * {
               cursor: pointer;
@@ -36,7 +39,7 @@ export default function Post({
               filter: grayscale(0%);
             }
             .project-img-wrapper {
-              height: 50vh;
+              height: min(calc(1400px / 1.77), calc(72vw / 1.77));
               width: 100%;
               background-color: #eeeeee;
               overflow: hidden;
@@ -83,7 +86,6 @@ export default function Post({
               justify-content: space-between;
               align-items: baseline;
               margin-top: 2vw;
-              max-width: 1400px;
               align-self: center;
             }
             .project-info-right {
@@ -106,9 +108,11 @@ export default function Post({
             @media (min-width: 600px) {
               .project-wrapper {
                 margin-bottom: 4vw;
+                width: min(72vw, 1400px);
               }
               .project-img-wrapper {
                 height: 40vh;
+                min-height: 400px;
               }
               .project-title {
                 font-size: 4vw;
@@ -117,7 +121,7 @@ export default function Post({
                 font-size: 3vw;
               }
               .project-info-right p {
-                font-size: 3vw;
+                font-size: 2.2vw;
               }
             }
             @media (min-width: 960px) {
@@ -128,7 +132,7 @@ export default function Post({
                 margin-bottom: 8vw;
               }
               .project-img-wrapper {
-                height: 85vh;
+                height: min(calc(72vw / 1.77), calc(1400px / 1.77));
               }
               .project-img-wrapper img {
                 filter: grayscale(70%);
