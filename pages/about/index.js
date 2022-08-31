@@ -80,9 +80,9 @@ export default function About() {
         .About {
           font-family: "Neue Montreal Book";
           font-weight: normal;
-          margin-top: 15vh;
+          padding-top: 15vh;
           padding-bottom: 15vh;
-          min-height: calc(75vh - 12px);
+          min-height: calc(100vh - 12px);
         }
         .about-wrapper {
           padding: 4vw;
@@ -199,7 +199,7 @@ export default function About() {
 
         @media (min-width: 960px) {
           .About {
-            margin-top: 25vh;
+            padding-top: calc(25vh - 12px);
           }
           .about-wrapper {
             padding-left: 14vw;

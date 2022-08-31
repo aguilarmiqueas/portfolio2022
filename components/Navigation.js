@@ -26,14 +26,6 @@ export default function Navigation({ parentRef, cursorRef }) {
         each: 0.1,
       },
     });
-    console.log(cursorRef);
-    gsap.to(cursorRef.current, {
-      width: 25,
-      height: 25,
-      opacity: 1,
-      duration: 0.2,
-      delay: 1,
-    });
   };
   useEffect(() => {
     gsap.from([about.current, work.current], {

@@ -7,8 +7,6 @@ import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useEffect, useRef, createRef } from "react";
 
 export default function Home() {
-  const router = useRouter();
-
   const mainTitle = useRef();
   const mainSubtitle = useRef();
   const workTitle = useRef();
@@ -22,7 +20,7 @@ export default function Home() {
       name: "CAR GAME",
       description: "FOLLOW THE LINE",
       technologies: "REACT THREE FIBER / ZUSTAND",
-      img: "/images/hoc-thumbnail.png",
+      img: "/images/car.jpeg",
       id: 1,
     },
     {
@@ -37,12 +35,11 @@ export default function Home() {
       name: "PORTFOLIO",
       description: "UPDATED 2022",
       technologies: "NEXT / REACT THREE FIBER / GSAP",
-      img: "/images/hoc-thumbnail.png",
+      img: "/images/folio.png",
 
       id: 3,
     },
   ];
-  const posts = useRef(data.map(createRef));
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -67,9 +64,6 @@ export default function Home() {
     const projectArray = projectSelector(".project-wrapper");
     projectArray.forEach((e, i) => {
       const trigger = i === 0 ? workTitle.current : projectArray[i - 1];
-
-      console.log(i, trigger);
-
       gsap.from(e, {
         scrollTrigger: {
           trigger: trigger,
@@ -126,14 +120,14 @@ export default function Home() {
         <header>
           <div className="title-wrap">
             <div className="mainTitleWrap">
-              <h1 ref={mainTitle} className="main-title title">
-                MIQUEAS AGUILAR
-              </h1>
-            </div>
-            <div className="mainTitleWrap">
               <h2 ref={mainSubtitle} className="main-subtitle title">
                 FRONT END DEVELOPER
               </h2>
+            </div>
+            <div className="mainTitleWrap">
+              <h1 ref={mainTitle} className="main-title title">
+                MIQUEAS AGUILAR
+              </h1>
             </div>
           </div>
         </header>
@@ -153,7 +147,6 @@ export default function Home() {
                 img={props.img}
                 id={props.id}
                 key={props.id}
-                ref={posts.current[i]}
               />
             ))}
           </div>
@@ -201,16 +194,23 @@ export default function Home() {
           transform: translate(-50%, -50%);
           width: 100%;
         }
+        .main-subtitle {
+          font-family: "Neue Montreal Book", sans-serif;
+          font-weight: normal;
+        }
+        .main-title {
+          font-size: 16vw;
+        }
 
         @media (min-width: 600px) {
           .title-wrap {
             top: 80%;
           }
           .main-title {
-            font-size: 6.25vw;
+            font-size: 8vw;
           }
           .main-subtitle {
-            font-size: 6vw;
+            font-size: 6.5vw;
           }
           .title {
             // line-height: 0.6;
@@ -234,7 +234,7 @@ export default function Home() {
             font-size: 5.25vw;
           }
           .main-subtitle {
-            font-size: 5vw;
+            font-size: 3.25vw;
           }
         }
       `}</style>
@@ -250,6 +250,12 @@ export default function Home() {
             padding: 4vw;
             padding-top: 8vw;
             margin-bottom: 0;
+          }
+          .projects-main {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
           }
           .projects-intro h1 {
             font-family: "Neue Montreal Bold", sans-serif;

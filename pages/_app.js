@@ -19,7 +19,7 @@ export default function MyApp({ Component, pageProps }) {
   });
   return (
     <div className="layout" ref={layout}>
-      <Cursor ref={cursor} />
+      <Cursor />
 
       <div className="content" ref={component}>
         <Navigation parentRef={component} cursorRef={cursor} />

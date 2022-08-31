@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 export default function Post({
   name,
   description,
@@ -10,7 +11,13 @@ export default function Post({
     <Link href={`/project/${id}`}>
       <div className="project-wrapper">
         <div className="project-img-wrapper">
-          <img src={img} alt="" />
+          <Image
+            src={img}
+            alt=""
+            layout="fill"
+            objectFit="cover"
+            className="project-img"
+          />
         </div>
         <div className="project-info">
           <div className="project-info-left">
@@ -23,19 +30,22 @@ export default function Post({
         </div>
         <style jsx>
           {`
+            img {
+              object-fit: cover;
+            }
             .project-wrapper {
               display: flex;
               flex-direction: column;
               margin-top: 4vh;
               cursor: pointer;
               // width: min(72vw, 1400px);
-
+              width: 100%;
               max-width: 1400px;
             }
             .project-wrapper * {
               cursor: pointer;
             }
-            .project-wrapper:hover .project-img-wrapper img {
+            .project-wrapper:hover .project-img {
               filter: grayscale(0%);
             }
             .project-img-wrapper {
@@ -71,11 +81,8 @@ export default function Post({
               height: 8px;
             }
 
-            .project-img-wrapper img {
+            .project-img {
               object-fit: cover;
-              width: 100%;
-              height: 110%;
-              transform: scale(1.05);
               transition: filter 300ms;
               position: relative;
             }
@@ -108,11 +115,6 @@ export default function Post({
             @media (min-width: 600px) {
               .project-wrapper {
                 margin-bottom: 4vw;
-                width: min(72vw, 1400px);
-              }
-              .project-img-wrapper {
-                height: 40vh;
-                min-height: 400px;
               }
               .project-title {
                 font-size: 4vw;
@@ -130,11 +132,9 @@ export default function Post({
               }
               .project-wrapper {
                 margin-bottom: 8vw;
+                width: min(72vw, 1400px);
               }
-              .project-img-wrapper {
-                height: min(calc(72vw / 1.77), calc(1400px / 1.77));
-              }
-              .project-img-wrapper img {
+              .project-img {
                 filter: grayscale(70%);
               }
               .project-info {
