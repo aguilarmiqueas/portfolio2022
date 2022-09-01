@@ -16,6 +16,33 @@ export default function Home({ data }) {
   const contactLinks = useRef();
   const contactEmail = useRef();
 
+  // const router = useRouter()
+  // const app = gsap.utils.selector(parentRef);
+  // const handleClick = (e, href) => {
+  //   e.preventDefault();
+  //   gsap.to(cursorRef.current, {
+  //     width: 0,
+  //     height: 0,
+  //     opacity: 0,
+  //     duration: 0.2,
+  //   });
+  //   gsap.to(app(".transition-box-main"), {
+  //     left: 0,
+  //     duration: 0.5,
+  //   });
+  //   gsap.to(app(".transition-box-off"), {
+  //     top: 0,
+  //     duration: 0.25,
+  //     delay: 0.4,
+  //     onComplete: () => {
+  //       gsap.set(app(".transition-box-main"), {
+  //         left: "-100vw",
+  //       });
+  //       router.push(href);
+  //     },
+  //   });
+  // };
+
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     const tl = new gsap.timeline();
