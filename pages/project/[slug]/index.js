@@ -18,28 +18,37 @@ export default function Post({ data }) {
   // }, [loading]);
   // if (loading) return <div>Loading</div>;
   // if (!data) return <div>Something went wrong.</div>;
-  const post = data.filter((e) => e.id == router.query.slug)[0];
+  let post = {
+    name: null,
+    url: null,
+    description: null,
+    technologies: null,
+    images: [,],
+    content: [],
+    img: null,
+  };
+  post = data.filter((e) => e.id == router.query.slug)[0];
 
   return (
     <article className="Project">
       <header>
-        {post.url ? (
-          <a href={post.url}>VISIT WEBSITE</a>
+        {post?.url ? (
+          <a href={post?.url}>VISIT WEBSITE</a>
         ) : (
           <div className="linkNotAvailable">LINK NOT AVAILABLE</div>
         )}
       </header>
       <div className="description">
-        <h1>{post.name}</h1>
-        <h2>{post.description}</h2>
-        <h3>{post.technologies}</h3>
+        <h1>{post?.name}</h1>
+        <h2>{post?.description}</h2>
+        <h3>{post?.technologies}</h3>
       </div>
       <div className="content">
-        {post.content.map((e) => (
+        {post?.content.map((e) => (
           <p>{e}</p>
         ))}
         <div className="images-wrapper">
-          {post.images.map((e) => (
+          {post?.images.map((e) => (
             <div className="next-wrapper">
               <Image src={e} layout="fill" objectFit="cover" />
             </div>
@@ -84,7 +93,7 @@ export default function Post({ data }) {
           header {
             height: 98vh;
             width: 100%;
-            background-image: url(${post.img});
+            background-image: url(${post?.img});
             background-position: center;
             background-size: cover;
             position: relative;

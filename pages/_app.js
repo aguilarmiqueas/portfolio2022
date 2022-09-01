@@ -74,7 +74,7 @@ export default function MyApp({ Component, pageProps }) {
 
       <div className="content" ref={component}>
         <Navigation parentRef={component} cursorRef={cursor} />
-        <Component {...pageProps} data={data} />
+        <Component {...pageProps} data={data} parentRef={component} />
         <Bar />
         <div
           className="transition-box transition-box-main"
