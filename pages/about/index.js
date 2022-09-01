@@ -12,7 +12,6 @@ export default function About() {
 
   useEffect(() => {
     const tl = new gsap.timeline();
-    console.log(tl);
     tl.from(
       [
         aboutMeTitle.current,
