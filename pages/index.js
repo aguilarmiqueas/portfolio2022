@@ -6,7 +6,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import { useEffect, useRef, createRef } from "react";
 
-export default function Home() {
+export default function Home({ data }) {
   const mainTitle = useRef();
   const mainSubtitle = useRef();
   const workTitle = useRef();
@@ -15,31 +15,6 @@ export default function Home() {
   const contactTitle = useRef();
   const contactLinks = useRef();
   const contactEmail = useRef();
-  const data = [
-    {
-      name: "CAR GAME",
-      description: "FOLLOW THE LINE",
-      technologies: "REACT THREE FIBER / ZUSTAND",
-      img: "/images/car-bg.png",
-      id: 1,
-    },
-    {
-      name: "HOUSE OF CARDS",
-      description: "A RADIOHEAD HOMAGE",
-      technologies: "VANILLA THREE",
-      img: "/images/hoc-bg.png",
-
-      id: 2,
-    },
-    {
-      name: "PORTFOLIO",
-      description: "UPDATED 2022",
-      technologies: "NEXT / REACT THREE FIBER / GSAP",
-      img: "/images/folio.png",
-
-      id: 3,
-    },
-  ];
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);

@@ -5,6 +5,57 @@ import Bar from "../components/Bar";
 import Navigation from "../components/Navigation";
 import Cursor from "../components/Cursor";
 import gsap from "gsap";
+const data = [
+  {
+    name: "CAR GAME",
+    description: "FOLLOW THE LINE",
+    technologies: "REACT THREE FIBER / ZUSTAND",
+    img: "/images/car-bg.png",
+    id: 1,
+    url: "https://car-game.vercel.app/",
+    content: [
+      "A small car game built with React Three Fiber, in which the objective is to stay on top of the purple line for as long as possible.",
+    ],
+    images: [
+      "/images/car.jpeg",
+      "/images/car1.jpg",
+      "/images/car3.jpg",
+      "/images/car4.png",
+      "/images/car5.jpg",
+    ],
+  },
+  {
+    name: "HOUSE OF CARDS",
+    description: "A RADIOHEAD HOMAGE",
+    technologies: "VANILLA THREE",
+    img: "/images/hoc-bg.png",
+    url: "https://house-of-cards.vercel.app/",
+    content: [
+      "An audiovisual experience, built utilizing point cloud data from Radiohead's House of Cards music video, and Three.js.",
+      "This experience utilizes a mix of built-in and custom post-processing effects, and custom shaders for the audio-reactive movement.",
+      "GSAP was used for the animations and camera movement.",
+    ],
+    images: [
+      "/images/hob1.png",
+      "/images/hob2.jpg",
+      "/images/hob3.jpg",
+      "/images/hob4.png",
+    ],
+    id: 2,
+  },
+  {
+    name: "PORTFOLIO",
+    description: "UPDATED 2022",
+    technologies: "NEXT / GSAP",
+    url: null,
+    img: "/images/folio.png",
+    content: [
+      "This portfolio was built with Next.js. GSAP does the heavy lifting for most animations and transitions, with regular CSS animations being used for some minor details like hover states.",
+    ],
+    images: [],
+    id: 3,
+  },
+];
 export default function MyApp({ Component, pageProps }) {
   const layout = useRef();
   const component = useRef();
@@ -23,7 +74,7 @@ export default function MyApp({ Component, pageProps }) {
 
       <div className="content" ref={component}>
         <Navigation parentRef={component} cursorRef={cursor} />
-        <Component {...pageProps} />
+        <Component {...pageProps} data={data} />
         <Bar />
         <div
           className="transition-box transition-box-main"
