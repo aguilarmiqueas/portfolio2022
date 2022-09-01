@@ -67,15 +67,20 @@ export default function Post() {
 
           @media (min-width: 600px) {
             .description {
-              width: 100vw;
-              max-width: 1200px;
+              width: 100%;
             }
             .description h1 {
-              font-size: clamp(1em, 6vw, 60px);
+              font-size: clamp(1em, 4vw, 60px);
             }
             .description h2,
             .description h3 {
-              font-size: clamp(1em, 3vw, 30px);
+              font-size: clamp(1em, 2vw, 30px);
+            }
+          }
+
+          @media (min-width: 960px) {
+            .description {
+              padding-left: 14vw;
             }
           }
         `}

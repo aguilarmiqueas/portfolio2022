@@ -11,13 +11,15 @@ export default function Post({
     <Link href={`/project/${id}`}>
       <div className="project-wrapper">
         <div className="project-img-wrapper">
-          <Image
-            src={img}
-            alt=""
-            layout="fill"
-            objectFit="cover"
-            className="project-img"
-          />
+          <div className="next-img-wrapper">
+            <Image
+              src={img}
+              alt=""
+              layout="fill"
+              objectFit="cover"
+              className="project-img"
+            />
+          </div>
         </div>
         <div className="project-info">
           <div className="project-info-left">
@@ -30,9 +32,6 @@ export default function Post({
         </div>
         <style jsx>
           {`
-            img {
-              object-fit: cover;
-            }
             .project-wrapper {
               display: flex;
               flex-direction: column;
@@ -79,6 +78,16 @@ export default function Post({
 
             .project-wrapper:hover .project-img-wrapper:after {
               height: 8px;
+            }
+
+            .next-img-wrapper {
+              position: relative;
+              width: 100%;
+              height: 100%;
+              transition: all 250ms ease;
+            }
+            .project-wrapper:hover .next-img-wrapper {
+              filter: grayscale(0);
             }
 
             .project-img {
@@ -134,8 +143,12 @@ export default function Post({
                 margin-bottom: 8vw;
                 width: min(72vw, 1400px);
               }
-              .project-img {
-                filter: grayscale(70%);
+              .next-img-wrapper {
+                filter: grayscale(0.5);
+              }
+
+              .project-wrapper:hover .next-img-wrapper {
+                filter: grayscale(0);
               }
               .project-info {
                 margin-top: 0vw;

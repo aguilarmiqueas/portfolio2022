@@ -20,14 +20,14 @@ export default function Home() {
       name: "CAR GAME",
       description: "FOLLOW THE LINE",
       technologies: "REACT THREE FIBER / ZUSTAND",
-      img: "/images/car.jpeg",
+      img: "/images/car-bg.png",
       id: 1,
     },
     {
       name: "HOUSE OF CARDS",
       description: "A RADIOHEAD HOMAGE",
       technologies: "VANILLA THREE",
-      img: "/images/hoc-thumbnail.png",
+      img: "/images/hoc-bg.png",
 
       id: 2,
     },
