@@ -7,26 +7,6 @@ import Cursor from "../components/Cursor";
 import gsap from "gsap";
 const data = [
   {
-    name: "CAR GAME",
-    description: "FOLLOW THE LINE",
-    technologies: "REACT THREE FIBER / ZUSTAND",
-    img: { desktop: "/images/car-bg.png", mobile: "/images/car-m-1.png" },
-    id: 1,
-    url: "https://car-game.vercel.app/",
-    content: [
-      "A small car game built with React Three Fiber, in which the objective is to stay on top of the purple line for as long as possible. The controls are WASD for movement, Space Bar for drifting and Shift for nitro boosting.",
-      "This game utilizes custom shaders for some of the post-processing effects and the ground distortion, using the car's velocity and position as input.",
-      "Zustand is being used as a global store to share state for certain elements of the game, like the car's position, velocity or its ref.",
-    ],
-    images: [
-      "/images/car.jpeg",
-      "/images/car1.jpg",
-      "/images/car3.jpg",
-      "/images/car4.png",
-      "/images/car5.jpg",
-    ],
-  },
-  {
     name: "HOUSE OF CARDS",
     description: "A RADIOHEAD HOMAGE",
     technologies: "VANILLA THREE",
@@ -46,6 +26,27 @@ const data = [
     id: 2,
   },
   {
+    name: "CAR GAME",
+    description: "FOLLOW THE LINE",
+    technologies: "REACT THREE FIBER / ZUSTAND",
+    img: { desktop: "/images/car-bg.png", mobile: "/images/car-m-1.png" },
+    id: 1,
+    url: "https://car-game.vercel.app/",
+    content: [
+      "A small car game built with React Three Fiber, in which the objective is to stay on top of the purple line for as long as possible. The controls are WASD for movement, Space Bar for drifting and Shift for nitro boosting.",
+      "This game utilizes custom shaders for some of the post-processing effects and the ground distortion, using the car's velocity and position as input.",
+      "Zustand is being used as a global store to share state for certain elements of the game, like the car's position and velocity.",
+      "The 3D model of the car was made by '4d_Bob' on Sketchfab, and the textures for the ground plane and scattered spheres were taken from Polyhaven. Screen-space reflections are implemented as a post-processing filter utilizing @0beqz's SSR component.",
+    ],
+    images: [
+      "/images/car.jpeg",
+      "/images/car1.jpg",
+      "/images/car3.jpg",
+      "/images/car4.png",
+      "/images/car5.jpg",
+    ],
+  },
+  {
     name: "PORTFOLIO",
     description: "UPDATED 2022",
     technologies: "NEXT / GSAP",
@@ -53,6 +54,7 @@ const data = [
     img: { desktop: "/images/folio.png", mobile: "/images/folio.png" },
     content: [
       "This portfolio was built with Next.js. GSAP does the heavy lifting for most animations and transitions, with regular CSS animations being used for some minor details like hover states.",
+      "",
     ],
     images: [],
     id: 3,

@@ -60,15 +60,21 @@ export default function About() {
             Contact
           </h2>
           <p ref={contactDescription} className="about-contact-links">
-            <a href="https://github.com/aguilarmiqueas/">GITHUB </a>/
-            <a href="https://www.linkedin.com/in/miqueas-aguilar/">
+            <a href="https://github.com/aguilarmiqueas/" target="_blank">
+              GITHUB{" "}
+            </a>
+            /
+            <a
+              href="https://www.linkedin.com/in/miqueas-aguilar/"
+              target="_blank"
+            >
               {" "}
               LINKEDIN{" "}
             </a>
             /<a href="https://twitter.com/mqemq"> TWITTER</a>
           </p>
           <p ref={contactEmail} className="about-contact-email">
-            <a href="mailto:aguilarmiqueas@gmail.com">
+            <a href="mailto:aguilarmiqueas@gmail.com" target="_blank">
               aguilarmiqueas@gmail.com
             </a>
           </p>

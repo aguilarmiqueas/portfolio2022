@@ -157,15 +157,21 @@ export default function Home({ data }) {
           <h1 ref={contactTitle}>CONTACT</h1>
           <div className="contact-wrapper">
             <div className="contact-links" ref={contactLinks}>
-              <a href="https://github.com/aguilarmiqueas/">GITHUB </a>/
-              <a href="https://www.linkedin.com/in/miqueas-aguilar/">
+              <a href="https://github.com/aguilarmiqueas/" target="_blank">
+                GITHUB{" "}
+              </a>
+              /
+              <a
+                href="https://www.linkedin.com/in/miqueas-aguilar/"
+                target="_blank"
+              >
                 {" "}
                 LINKEDIN{" "}
               </a>
               /<a href="https://twitter.com/mqemq"> TWITTER</a>
             </div>
             <div className="contact-email" ref={contactEmail}>
-              <a href="mailto:aguilarmiqueas@gmail.com">
+              <a href="mailto:aguilarmiqueas@gmail.com" target="_blank">
                 aguilarmiqueas@gmail.com
               </a>
             </div>
