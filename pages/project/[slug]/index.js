@@ -91,9 +91,9 @@ export default function Post({ data }) {
           }
 
           header {
-            height: 98vh;
+            height: calc(100vw / 1.77);
             width: 100%;
-            background-image: url(${post?.img});
+            background-image: url(${post?.img.desktop});
             background-position: center;
             background-size: cover;
             position: relative;
@@ -166,6 +166,7 @@ export default function Post({ data }) {
 
           .description {
             padding: 4vw;
+            padding-bottom: 2vw;
             margin: 4vh 0;
           }
           .description h1 {
@@ -178,6 +179,9 @@ export default function Post({ data }) {
           }
 
           @media (min-width: 600px) {
+            header {
+              background-image: url(${post?.img.desktop});
+            }
             .description {
               width: 100%;
             }
@@ -189,7 +193,7 @@ export default function Post({ data }) {
               font-size: clamp(1em, 2vw, 30px);
             }
             .content p {
-              font-size: clamp(1em, 2vw, 30px);
+              font-size: clamp(1em, 1.6vw, 30px);
             }
             header a,
             header .linkNotAvailable {
@@ -208,7 +212,7 @@ export default function Post({ data }) {
             }
 
             .images-wrapper {
-              margin-top: 8vw;
+              margin-top: 4vw;
             }
 
             .Project .content {
@@ -219,9 +223,12 @@ export default function Post({ data }) {
               padding-left: 14vw;
             }
             .content p {
-              max-width: 74vw;
+              max-width: 50vw;
               padding: 0.5vw;
               padding-left: 0vw;
+            }
+            header {
+              height: calc(85vw / 1.77);
             }
             header a,
             header .linkNotAvailable {

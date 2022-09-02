@@ -128,7 +128,7 @@ export default function Home({ data }) {
             </div>
             <div className="mainTitleWrap">
               <h1 ref={mainTitle} className="main-title title">
-                MIQUEAS AGUILAR
+                MIQUEAS <span>AGUILAR</span>
               </h1>
             </div>
           </div>
@@ -203,14 +203,19 @@ export default function Home({ data }) {
         .main-title {
           font-size: 16vw;
         }
+        .main-title span {
+          font-size: 17vw;
+        }
 
         @media (min-width: 600px) {
           .title-wrap {
             top: 80%;
           }
-          .main-title {
+          .main-title,
+          .main-title span {
             font-size: 8vw;
           }
+
           .main-subtitle {
             font-size: 6.5vw;
           }
@@ -232,7 +237,8 @@ export default function Home({ data }) {
           .title {
             text-align: left;
           }
-          .main-title {
+          .main-title,
+          .main-title span {
             font-size: 5.25vw;
           }
           .main-subtitle {

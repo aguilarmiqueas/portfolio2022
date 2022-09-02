@@ -13,7 +13,7 @@ export default function Post({
         <div className="project-img-wrapper">
           <div className="next-img-wrapper">
             <Image
-              src={img}
+              src={img.desktop}
               alt=""
               layout="fill"
               objectFit="cover"
