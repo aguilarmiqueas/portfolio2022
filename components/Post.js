@@ -48,7 +48,7 @@ export default function Post({
               filter: grayscale(0%);
             }
             .project-img-wrapper {
-              height: min(calc(1400px / 1.77), calc(72vw / 1.77));
+              height: min(calc(1400px / 1.77), calc(96vw / 1.77));
               width: 100%;
               background-color: #eeeeee;
               overflow: hidden;

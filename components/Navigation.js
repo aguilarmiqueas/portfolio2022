@@ -16,7 +16,7 @@ export default function Navigation({ parentRef, cursorRef }) {
       top: "-100vh",
       duration: 0.25,
     });
-    gsap.from([about.current, work.current], {
+    gsap.from([work.current, about.current], {
       duration: 1,
       ease: "power3.inOut",
       opacity: 0,
@@ -28,7 +28,7 @@ export default function Navigation({ parentRef, cursorRef }) {
     });
   };
   useEffect(() => {
-    gsap.from([about.current, work.current], {
+    gsap.from([work.current, about.current], {
       duration: 1,
       ease: "power3.inOut",
       opacity: 0,

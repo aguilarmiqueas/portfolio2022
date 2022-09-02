@@ -53,11 +53,37 @@ const data = [
     url: null,
     img: { desktop: "/images/folio.png", mobile: "/images/folio.png" },
     content: [
-      "This portfolio was built with Next.js. GSAP does the heavy lifting for most animations and transitions, with regular CSS animations being used for some minor details like hover states.",
-      "",
+      "This portfolio was built with Next.js. GSAP does the heavy lifting for most animations and transitions, with regular CSS animations being used for some of the minor microinteractions like hover states.",
+      "The animated cursor is a simple div whose position is being linearly interpolated to the position of the actual cursor every frame (using requestAnimationFrame).",
     ],
     images: [],
     id: 3,
+  },
+  {
+    name: "FREELANCE WORK",
+    description: "A COMPILATION OF PREVIOUS WORKS",
+    technologies: "VUE / NUXT",
+    url: null,
+    id: 4,
+    img: { desktop: "/images/patriz.png" },
+    content: [
+      "This is an anthology of my past freelance works.",
+      "Some of these websites are simple landing pages built with the vanilla stack (HTML, CSS, JavaScript), others are more involved web apps like blogs and required Vue, Nuxt and WordPress (as the Headless API, using Advanced Custom Fields)",
+      "I worked closely with a UI designer for most of these.",
+    ],
+    images: [
+      "/images/vistalago.png",
+      "/images/patriz.png",
+
+      "/images/norw1.jpg",
+      "/images/norw2.png",
+      "/images/norw3.jpg",
+      "/images/norw4.png",
+      "/images/img.png",
+
+      "/images/biamaq.png",
+      "/images/bucpy.png",
+    ],
   },
 ];
 export default function MyApp({ Component, pageProps }) {

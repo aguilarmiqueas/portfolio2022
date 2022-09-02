@@ -42,7 +42,7 @@ export default function About() {
             ABOUT ME
           </h1>
           <p ref={aboutMeDescription}>
-            Hi! I'm a creative / front end developer based in Argentina. Looking
+            Hi! I'm a frontend / creative developer based in Argentina. Looking
             to build fun stuff and learn new things. Currently available for
             work.
           </p>

@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Router, { useRouter } from "next/router";
 import Navigation from "../../../components/Navigation";
 import Image from "next/image";
+import gsap from "gsap";
 export default function Post({ data }) {
   // const [data, setData] = useState(null);
   // const [loading, setLoading] = useState(true);
@@ -28,7 +29,29 @@ export default function Post({ data }) {
     img: null,
   };
   post = data.filter((e) => e.id == router.query.slug)[0];
-
+  const title = useRef();
+  const description = useRef();
+  const postContent = useRef();
+  const technologies = useRef();
+  useEffect(() => {
+    gsap.from(
+      [
+        title.current,
+        description.current,
+        technologies.current,
+        postContent.current,
+      ],
+      {
+        opacity: 0,
+        y: 50,
+        duration: 0.5,
+        ease: "power2.out",
+        stagger: {
+          each: 0.075,
+        },
+      }
+    );
+  }, []);
   return (
     <article className="Project">
       <header>
@@ -39,11 +62,13 @@ export default function Post({ data }) {
         )}
       </header>
       <div className="description">
-        <h1>{post?.name}</h1>
-        <h2>{post?.description}</h2>
-        <h3>{post?.technologies}</h3>
+        <h1 ref={title}>{post?.name}</h1>
+        <div className="description-wrapper">
+          <h2 ref={description}>{post?.description}</h2>
+          <h3 ref={technologies}>{post?.technologies}</h3>
+        </div>
       </div>
-      <div className="content">
+      <div ref={postContent} className="content">
         {post?.content.map((e) => (
           <p>{e}</p>
         ))}
@@ -204,7 +229,7 @@ export default function Post({ data }) {
           @media (min-width: 960px) {
             .next-wrapper {
               width: min(74vw, 1400px);
-              height: 40vw;
+              height: min(calc(40vw, calc(1400px / 1.77)));
               margin-left: 0;
             }
             .Projects {
