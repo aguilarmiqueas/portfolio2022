@@ -219,6 +219,7 @@ export default function Post({ data }) {
             }
             .content p {
               font-size: clamp(1em, 1.6vw, 30px);
+              margin: 1vw 4vw;
             }
             header a,
             header .linkNotAvailable {
