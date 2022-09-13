@@ -67,6 +67,11 @@ export default function Cursor() {
             display: block;
           }
         }
+        @media (hover: none) and (pointer: coarse) {
+          .cursor {
+            opacity: 0;
+          }
+        }
       `}</style>
     </div>
   );
