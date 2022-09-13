@@ -219,7 +219,8 @@ export default function Post({ data }) {
             }
             .content p {
               font-size: clamp(1em, 1.6vw, 30px);
-              padding: 1vw 4vw;
+              padding-top: 1vw;
+              padding-bottom: 1vw;
             }
             header a,
             header .linkNotAvailable {
